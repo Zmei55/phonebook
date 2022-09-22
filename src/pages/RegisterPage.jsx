@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useRegisterUserMutation } from 'redux/auth';
+import { loginSuccess } from 'redux/auth';
 
 const styles = {
   form: {
@@ -13,41 +15,27 @@ const styles = {
 };
 
 export function RegisterPage() {
+  const dispatch = useDispatch();
   const [registerUser] = useRegisterUserMutation();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
 
-  const handleChange = ({ target: { name, value } }) => {
-    switch (name) {
-      case 'name':
-        return setName(value);
-      case 'email':
-        return setEmail(value);
-      case 'password':
-        return setPassword(value);
-      default:
-        return;
-    }
-  };
+  const handleChange = ({ target: { name, value } }) =>
+    setFormState(prev => ({ ...prev, [name]: value }));
   // попробовать заменить switch
   // const [formValue, setFormValue] = useState(initialState);
   // setFormValue({ ...formValue, [e.target.name]: e.target.value})
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
 
-    const NewUser = {
-      name: name,
-      email: email,
-      password: password,
-    };
+    const user = await registerUser(formState).unwrap();
+    dispatch(loginSuccess(user));
 
-    registerUser(NewUser);
-
-    setName('');
-    setEmail('');
-    setPassword('');
+    setFormState('');
   };
 
   return (
@@ -57,27 +45,17 @@ export function RegisterPage() {
       <form onSubmit={handleSubmit} style={styles.form}>
         <label style={styles.label}>
           Name
-          <input type="text" name="name" value={name} onChange={handleChange} />
+          <input type="text" name="name" onChange={handleChange} />
         </label>
 
         <label style={styles.label}>
           Email
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
+          <input type="email" name="email" onChange={handleChange} />
         </label>
 
         <label style={styles.label}>
           Password
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
+          <input type="password" name="password" onChange={handleChange} />
         </label>
 
         <button type="submit">Register</button>

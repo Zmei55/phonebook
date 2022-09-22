@@ -25,8 +25,19 @@ const authApi = api.injectEndpoints({
       }),
       invalidatesTags: ['User'],
     }),
+    getCurrentUser: builder.query({
+      query: () => ({
+        url: '/users/current',
+        method: 'GET',
+      }),
+      invalidatesTags: ['User'],
+    }),
   }),
 });
 
-export const { useRegisterUserMutation, useLogInMutation, useLogOutMutation } =
-  authApi;
+export const {
+  useRegisterUserMutation,
+  useLogInMutation,
+  useLogOutMutation,
+  useGetCurrentUserQuery,
+} = authApi;

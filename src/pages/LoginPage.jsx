@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLogInMutation } from 'redux/auth';
-import { loginSuccess } from 'redux/auth/authSlice';
+import { loginSuccess } from 'redux/auth';
 
 const styles = {
   form: {
