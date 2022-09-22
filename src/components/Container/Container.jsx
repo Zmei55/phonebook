@@ -1,5 +1,6 @@
-import { Section } from './Container.styled';
+import React from 'react';
+import { ContainerStyle } from './Container.styled';
 
 export function Container({ children }) {
-  return <Section>{children}</Section>;
+  return <ContainerStyle className="Container">{children}</ContainerStyle>;
 }

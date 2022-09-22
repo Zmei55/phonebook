@@ -1,30 +1,19 @@
-import { useState } from 'react';
-import { useFetchContactsQuery } from 'redux/contacts';
+import { Routes, Route } from 'react-router-dom';
 import { Container } from 'components/Container';
-import { ContactForm } from 'components/ContactForm';
-import { Filter } from 'components/Filter';
-import { ContactList } from 'components/ContactList';
-import { Spinner } from 'components/Spinner';
-import { Toaster } from 'react-hot-toast';
-import { Title } from './App.styled';
+import { AppBar } from 'components/AppBar';
+import { HomePage, ContactsPage, LoginPage, RegisterPage } from 'pages';
 
 export function App() {
-  const [filterValue, setFilterValue] = useState('');
-  const { data, isFetching } = useFetchContactsQuery(filterValue);
-
   return (
-    <>
-      <Container>
-        <Title>Phonebook</Title>
-        <ContactForm />
-      </Container>
-      <Container>
-        <Title>Contacts</Title>
-        <Filter filterValue={filterValue} handleFilter={setFilterValue} />
-        {isFetching && <Spinner />}
-        {data && <ContactList contacts={data} />}
-      </Container>
-      <Toaster position="top-right" />
-    </>
+    <Container>
+      <AppBar />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes>
+    </Container>
   );
 }
