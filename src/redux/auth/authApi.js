@@ -30,7 +30,7 @@ const authApi = api.injectEndpoints({
         url: '/users/current',
         method: 'GET',
       }),
-      invalidatesTags: ['User'],
+      providesTags: ['User'],
     }),
   }),
 });

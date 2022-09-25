@@ -7,7 +7,6 @@ const initialState = {
   },
   token: '',
   isLoggedIn: false,
-  isLoggedOut: false,
 };
 
 export const authSlice = createSlice({
@@ -19,11 +18,10 @@ export const authSlice = createSlice({
       state.token = token;
       state.isLoggedIn = true;
     },
-    logout: state => {
-      state.user = { name: null, email: null };
-      state.token = null;
+    logoutSuccess: state => {
+      state.user = { name: '', email: '' };
+      state.token = '';
       state.isLoggedIn = false;
-      state.isLoggedOut = true;
     },
     refreshUser: (state, { payload }) => {
       state.user = payload;
@@ -32,7 +30,7 @@ export const authSlice = createSlice({
   },
 });
 
-export const { loginSuccess, logout, refreshUser } = authSlice.actions;
+export const { loginSuccess, logoutSuccess, refreshUser } = authSlice.actions;
 export default authSlice.reducer;
 
 // =============================================================================

@@ -3,14 +3,11 @@ import { api } from 'redux/api';
 const contactsApi = api.injectEndpoints({
   endpoints: builder => ({
     getAllContacts: builder.query({
-      query: (filterValue = '') => ({
+      query: () => ({
         url: '/contacts',
         method: 'GET',
-        params: {
-          name: filterValue,
-        },
       }),
-      invalidatesTags: ['Contacts'],
+      providesTags: ['Contacts'], // при query
     }),
     createNewContact: builder.mutation({
       query: newContact => ({
@@ -18,7 +15,7 @@ const contactsApi = api.injectEndpoints({
         method: 'POST',
         body: newContact,
       }),
-      invalidatesTags: ['Contacts'],
+      invalidatesTags: ['Contacts'], // при mutation
     }),
     deleteContact: builder.mutation({
       query: contactId => ({
