@@ -1,3 +1,13 @@
+import { ContactEditor } from 'components/ContactEditor';
+import { ContactFilter } from 'components/ContactFilter';
+import { ContactList } from 'components/ContactList';
+
 export function ContactsPage() {
-  return <h1>ContactsPage</h1>;
+  return (
+    <>
+      <ContactEditor />
+      <ContactFilter />
+      <ContactList />
+    </>
+  );
 }
