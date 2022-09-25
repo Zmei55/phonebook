@@ -1,3 +1,9 @@
+import { Label, Input } from './ContactFilter.styled';
+
 export function ContactFilter() {
-  return <h2>ContactFilter</h2>;
+  return (
+    <Label>
+      <Input type="text" placeholder="Find contacts name" />
+    </Label>
+  );
 }
