@@ -3,9 +3,12 @@ import { api } from 'redux/api';
 const contactsApi = api.injectEndpoints({
   endpoints: builder => ({
     getAllContacts: builder.query({
-      query: () => ({
+      query: (filterValue = '') => ({
         url: '/contacts',
         method: 'GET',
+        params: {
+          name: filterValue,
+        },
       }),
       invalidatesTags: ['Contacts'],
     }),
