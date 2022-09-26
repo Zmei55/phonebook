@@ -1,17 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { PublicRoute } from 'components/PublicRoute';
 import { PrivateRoute } from 'components/PrivateRoute';
-import { useGetCurrentUserQuery } from 'redux/auth';
 import { Container } from 'components/Container';
 import { AppBar } from 'components/AppBar';
 import { HomePage, ContactsPage, LoginPage, RegisterPage } from 'pages';
+// import { useSelector } from 'react-redux';
+// import { useGetCurrentUserQuery } from 'redux/auth';
 
 export function App() {
-  const token = useSelector(state => state.auth.token);
+  // const token = useSelector(state => state.auth.token);
   // const isFetchingCurrentUser = useSelector();
 
-  useGetCurrentUserQuery(null, { skip: !token });
+  // useGetCurrentUserQuery(null, { skip: !token });
 
   return (
     <Container>
