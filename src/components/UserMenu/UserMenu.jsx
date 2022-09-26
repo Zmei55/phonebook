@@ -19,7 +19,7 @@ export function UserMenu() {
   return (
     <Container>
       <IMG src={avatar} alt="avatar" width="32" />
-      <UserName>Herzlich wilkommen, {name}</UserName>
+      {/* <UserName>Herzlich wilkommen, {name}</UserName> */}
       <button type="button" onClick={handleLogOutClick}>
         Log Out
       </button>

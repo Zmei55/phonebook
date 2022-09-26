@@ -2,12 +2,12 @@ import { useSelector } from 'react-redux';
 import { Navlink } from './Navigation.styled';
 
 export function Navigation() {
-  const isLoaddedIn = useSelector(state => state.auth.isLoaddedIn);
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
   return (
     <nav>
-      <Navlink to="/">Home</Navlink>
-      {isLoaddedIn && <Navlink to="/contacts">Contacts List</Navlink>}
+      <Navlink to="/home">Home</Navlink>
+      {isLoggedIn && <Navlink to="/contacts">Contacts List</Navlink>}
     </nav>
   );
 }
