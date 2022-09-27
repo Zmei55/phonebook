@@ -19,7 +19,7 @@ export function App() {
 
       <Routes>
         <Route
-          path="/home"
+          path="/"
           element={
             <PublicRoute>
               <HomePage />
@@ -37,7 +37,7 @@ export function App() {
         <Route
           path="/register"
           element={
-            <PublicRoute restricted redirectTo="contacts">
+            <PublicRoute restricted redirectTo="/contacts">
               <RegisterPage />
             </PublicRoute>
           }
