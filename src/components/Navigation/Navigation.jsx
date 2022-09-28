@@ -6,7 +6,9 @@ export function Navigation() {
 
   return (
     <nav>
-      <Navlink to="/">Home</Navlink>
+      <Navlink to="/" end>
+        Home
+      </Navlink>
       {isLoggedIn && <Navlink to="/contacts">Contacts List</Navlink>}
     </nav>
   );
