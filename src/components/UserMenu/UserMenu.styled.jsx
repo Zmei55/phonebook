@@ -18,7 +18,7 @@ export const UserName = styled.span`
 export const LogOutBtn = styled.button`
   display: flex;
   justify-content: center;
-  padding: ${props => props.theme.spacing(1)};
+  padding: ${props => props.theme.spacing(0)};
 
   border: 1px solid ${props => props.theme.colors.grey};
   border-radius: ${props => props.theme.borderRadius};
@@ -34,7 +34,7 @@ export const LogOutBtn = styled.button`
 export const LogOutIcon = styled(MdLogout)`
   fill: ${props => props.theme.colors.grey};
   width: 20px;
-  height: 20px;
+  height: 28px;
 
   :focus,
   :hover {
