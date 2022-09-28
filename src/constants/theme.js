@@ -4,7 +4,7 @@ export const theme = Object.freeze({
     secondary: '#89a0fc',
     white: '#fff',
     black: 'rgb(59, 59, 59)',
-    grey: 'rgb(111, 111, 111)',
+    grey: '#979797',
   },
   borderForm: '1px solid #111',
   borderRadius: '4px',
