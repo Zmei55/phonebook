@@ -4,11 +4,11 @@ import { NavLink } from 'react-router-dom';
 export const Navlink = styled(NavLink)`
   display: inline-block;
   text-decoration: none;
-  padding: 12px;
+  padding: ${props => props.theme.spacing(3)};
   font-weight: 700;
-  color: #2a363b;
+  color: rgb(59, 59, 59);
 
   &.active {
-    color: #e84a5f;
+    color: ${props => props.theme.colors.first};
   }
 `;

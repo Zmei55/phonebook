@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
 import { ThemeProvider } from '@emotion/react';
-import { theme } from 'constants/index';
+import { theme } from 'constants';
 import { App } from './components/App';
 import 'modern-normalize/modern-normalize.css';
 import './index.css';

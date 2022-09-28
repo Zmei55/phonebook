@@ -6,15 +6,19 @@ export const AuthContainer = styled.div``;
 export const Navlink = styled(NavLink)`
   display: inline-block;
   text-decoration: none;
-  padding: 4px 12px;
+  padding-top: ${props => props.theme.spacing(1)};
+  padding-bottom: ${props => props.theme.spacing(1)};
+  padding-right: ${props => props.theme.spacing(3)};
+  padding-left: ${props => props.theme.spacing(3)};
   font-weight: 700;
-  color: #2a363b;
-  border: 1px solid #2a363b;
+  color: ${props => props.theme.colors.first};
+  background-color: ${props => props.theme.colors.white};
+  border: 1px solid ${props => props.theme.colors.first};
   border-radius: 28px;
 
-  .active {
-    color: #2015e8;
-    background-color: #fff;
+  &.active {
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.first};
   }
 
   :not(:last-child) {

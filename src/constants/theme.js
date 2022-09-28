@@ -1,7 +1,10 @@
 export const theme = Object.freeze({
   colors: {
-    activeButton: '#89a0fc',
-    activeBorder: '#0d3dff',
+    first: '#0d3dff',
+    secondary: '#89a0fc',
+    white: '#fff',
+    black: 'rgb(59, 59, 59)',
+    grey: 'rgb(111, 111, 111)',
   },
   borderForm: '1px solid #111',
   borderRadius: '4px',

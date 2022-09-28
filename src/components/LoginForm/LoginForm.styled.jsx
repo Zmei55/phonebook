@@ -14,7 +14,6 @@ export const Form = styled.form`
   padding-right: ${props => props.theme.spacing(3)};
   padding-bottom: ${props => props.theme.spacing(1)};
   padding-left: ${props => props.theme.spacing(3)};
-  margin-bottom: ${props => props.theme.spacing(3)};
   border: ${props => props.theme.borderForm};
 `;
 
