@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { MdOutlineDeleteOutline } from 'react-icons/md';
 
 export const Item = styled.li`
   display: flex;
@@ -14,7 +15,7 @@ export const Item = styled.li`
   }
 `;
 
-export const Button = styled.button`
+export const DeleteBtn = styled.button`
   border-radius: ${props => props.theme.borderRadius};
   border-color: transparent;
   cursor: pointer;
@@ -25,3 +26,5 @@ export const Button = styled.button`
     background-color: ${props => props.theme.colors.activeButton};
   }
 `;
+
+export const DeleteIcon = styled(MdOutlineDeleteOutline)``;
