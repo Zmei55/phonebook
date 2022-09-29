@@ -1,15 +1,24 @@
 import PropTypes from 'prop-types';
 import { useDeleteContactMutation } from 'redux/contacts';
 import { Spinner } from 'components/Spinner';
-import { Item, DeleteBtn, DeleteIcon } from './ContactListItem.styled';
+import {
+  Item,
+  ContactsContainer,
+  Name,
+  Number,
+  DeleteBtn,
+  DeleteIcon,
+} from './ContactListItem.styled';
 
 export function ContactListItem({ id, name, number }) {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
 
   return (
     <Item>
-      <span>{`${name}`}</span>
-      <span>{`${number}`}</span>
+      <ContactsContainer>
+        <Name>{`${name}`}</Name>
+        <Number>{`${number}`}</Number>
+      </ContactsContainer>
       <DeleteBtn
         type="button"
         onClick={() => deleteContact(id)}
