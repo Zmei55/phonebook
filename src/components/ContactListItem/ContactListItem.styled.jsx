@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
-import { MdOutlineDeleteOutline } from 'react-icons/md';
+import {
+  MdPhoneForwarded,
+  MdEditNote,
+  MdOutlineDeleteOutline,
+} from 'react-icons/md';
 
 export const Item = styled.li`
   display: flex;
@@ -33,7 +37,9 @@ export const Number = styled.div`
   margin-left: auto;
 `;
 
-export const DeleteBtn = styled.button`
+export const ButtonsContainer = styled.div``;
+
+export const Button = styled.button`
   border-radius: ${props => props.theme.borderRadius};
   border-color: transparent;
   cursor: pointer;
@@ -43,6 +49,12 @@ export const DeleteBtn = styled.button`
     border-color: ${props => props.theme.colors.activeBorder};
     background-color: ${props => props.theme.colors.activeButton};
   }
+
+  :not(:last-child) {
+    margin-right: 12px;
+  }
 `;
 
+export const CallIcon = styled(MdPhoneForwarded)``;
+export const UpdateIcon = styled(MdEditNote)``;
 export const DeleteIcon = styled(MdOutlineDeleteOutline)``;
