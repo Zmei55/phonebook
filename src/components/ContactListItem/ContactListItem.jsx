@@ -16,7 +16,7 @@ export function ContactListItem({ id, name, number }) {
   return (
     <Item>
       <ContactsContainer>
-        <Name>{`${name}`}</Name>
+        <Name>{`${name}:`}</Name>
         <Number>{`${number}`}</Number>
       </ContactsContainer>
       <DeleteBtn

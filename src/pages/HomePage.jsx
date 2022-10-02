@@ -1,3 +1,5 @@
+import { HomeHiro } from 'components/HomeHiro';
+
 export function HomePage() {
-  return <h1>HomePage</h1>;
+  return <HomeHiro />;
 }

@@ -12,13 +12,12 @@ export const Item = styled.li`
   }
 
   :not(:last-child) {
-    margin-bottom: ${props => props.theme.spacing(1)};
+    margin-bottom: ${props => props.theme.spacing(2)};
   }
 `;
 
 export const ContactsContainer = styled.div`
   display: flex;
-
   flex-direction: column;
 
   margin-right: ${props => props.theme.spacing(2)};
@@ -26,6 +25,7 @@ export const ContactsContainer = styled.div`
 
 export const Name = styled.div`
   display: block;
+  font-weight: 700;
 `;
 
 export const Number = styled.div`
