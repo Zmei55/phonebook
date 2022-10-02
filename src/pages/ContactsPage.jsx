@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useGetAllContactsQuery } from 'redux/contacts';
-import { ContactForm } from 'components/ContactForm';
-import { ContactFilter } from 'components/ContactFilter';
+import { ContactSection } from 'components/ContactSection';
 import { ContactList } from 'components/ContactList';
 
 export function ContactsPage() {
@@ -14,8 +13,7 @@ export function ContactsPage() {
 
   return (
     <>
-      <ContactForm />
-      <ContactFilter filterValue={filterValue} handleFilter={setFilterValue} />
+      <ContactSection filterValue={filterValue} handleFilter={setFilterValue} />
       <ContactList contacts={filteredContacts} />
     </>
   );

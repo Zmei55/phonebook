@@ -1,16 +1,7 @@
 import styled from '@emotion/styled';
 
-export const Section = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
 export const Label = styled.label`
-  display: flex;
-  flex-direction: column;
-
-  margin-bottom: ${props => props.theme.spacing(3)};
+  margin-right: ${props => props.theme.spacing(3)};
 `;
 
 export const Input = styled.input`

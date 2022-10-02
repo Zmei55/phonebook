@@ -33,7 +33,7 @@ export function ContactForm() {
 
   return (
     <Section>
-      <Title>Phonebook</Title>
+      <Title>Add new contact</Title>
       <Form onSubmit={handleSubmit}>
         <Label>
           Name

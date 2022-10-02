@@ -1,8 +1,8 @@
-import { Section, Label, Input } from './ContactFilter.styled';
+import { Label, Input } from './ContactFilter.styled';
 
 export function ContactFilter({ filterValue, handleFilter }) {
   return (
-    <Section>
+    <>
       <Label>
         <Input
           type="text"
@@ -11,6 +11,6 @@ export function ContactFilter({ filterValue, handleFilter }) {
           onChange={e => handleFilter(e.target.value)}
         />
       </Label>
-    </Section>
+    </>
   );
 }
