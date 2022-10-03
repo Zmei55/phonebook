@@ -9,7 +9,7 @@ import {
   Button,
 } from './ContactForm.styled';
 
-export function ContactForm() {
+export function ContactForm({ onClose }) {
   const [createContact] = useCreateNewContactMutation();
   const [formState, setFormState] = useState({
     name: '',
@@ -29,6 +29,7 @@ export function ContactForm() {
     }
 
     event.target.reset();
+    onClose();
   };
 
   return (

@@ -29,7 +29,12 @@ export function ContactListItem({ id, name, number }) {
     <Item>
       {showModal && (
         <Modal onClose={toggleModal}>
-          <UpdateContactForm id={id} name={name} number={number} />
+          <UpdateContactForm
+            id={id}
+            name={name}
+            number={number}
+            onClose={toggleModal}
+          />
         </Modal>
       )}
 

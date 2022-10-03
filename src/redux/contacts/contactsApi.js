@@ -25,12 +25,12 @@ const contactsApi = api.injectEndpoints({
       invalidatesTags: ['Contacts'],
     }),
     updateContact: builder.mutation({
-      query: ({ contactId, ...body }) => ({
-        url: `/contacts/${contactId}`,
+      query: contact => ({
+        url: `/contacts/${contact.id}`,
         method: 'PATCH',
         body: {
-          name: '',
-          number: '',
+          name: contact.name,
+          number: contact.number,
         },
       }),
       invalidatesTags: ['Contacts'],

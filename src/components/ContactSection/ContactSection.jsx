@@ -16,7 +16,7 @@ export function ContactSection({ filterValue, handleFilter }) {
     <Section>
       {showModal && (
         <Modal onClose={toggleModal}>
-          <ContactForm />
+          <ContactForm onClose={toggleModal} />
         </Modal>
       )}
 

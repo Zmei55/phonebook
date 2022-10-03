@@ -9,14 +9,13 @@ import {
   Button,
 } from './UpdateContactForm.styled';
 
-export function UpdateContactForm({ id, name, number }) {
+export function UpdateContactForm({ id, name, number, onClose }) {
   const [updateContact, { isLoading: isUpdating }] = useUpdateContactMutation();
   const [formState, setFormState] = useState({
     id,
     name,
     number,
   });
-  console.log('UpdateContactForm ~ formState', formState);
 
   const handleChange = ({ target: { name, value } }) =>
     setFormState(prev => ({ ...prev, [name]: value }));
@@ -31,6 +30,7 @@ export function UpdateContactForm({ id, name, number }) {
     }
 
     event.target.reset();
+    onClose();
   };
 
   return (
