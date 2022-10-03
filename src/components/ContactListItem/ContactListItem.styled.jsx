@@ -23,8 +23,6 @@ export const Item = styled.li`
 export const ContactsContainer = styled.div`
   display: flex;
   flex-direction: column;
-
-  margin-right: ${props => props.theme.spacing(2)};
 `;
 
 export const Name = styled.div`
@@ -37,9 +35,14 @@ export const Number = styled.div`
   margin-left: auto;
 `;
 
-export const ButtonsContainer = styled.div``;
+export const ButtonsContainer = styled.div`
+  display: flex;
+`;
 
 export const Button = styled.button`
+  width: 25px;
+  height: 25px;
+  padding: 2px;
   border-radius: ${props => props.theme.borderRadius};
   border-color: transparent;
   cursor: pointer;
@@ -55,6 +58,40 @@ export const Button = styled.button`
   }
 `;
 
-export const CallIcon = styled(MdPhoneForwarded)``;
-export const UpdateIcon = styled(MdEditNote)``;
-export const DeleteIcon = styled(MdOutlineDeleteOutline)``;
+export const CallLink = styled.a`
+  display: block;
+
+  width: 19px;
+  height: 19px;
+`;
+
+export const CallIcon = styled(MdPhoneForwarded)`
+  fill: ${props => props.theme.colors.black};
+  width: 19px;
+  height: 19px;
+
+  :hover,
+  :focus {
+    fill: ${props => props.theme.colors.first};
+  }
+`;
+
+export const UpdateIcon = styled(MdEditNote)`
+  width: 19px;
+  height: 19px;
+
+  :hover,
+  :focus {
+    fill: ${props => props.theme.colors.first};
+  }
+`;
+
+export const DeleteIcon = styled(MdOutlineDeleteOutline)`
+  width: 19px;
+  height: 19px;
+
+  :hover,
+  :focus {
+    fill: ${props => props.theme.colors.first};
+  }
+`;

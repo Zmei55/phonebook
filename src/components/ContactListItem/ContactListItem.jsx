@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-import {
-  useDeleteContactMutation,
-  useUpdateContactMutation,
-} from 'redux/contacts';
+import { useDeleteContactMutation } from 'redux/contacts';
+import { Modal } from 'components/Modal';
+import { UpdateContactForm } from 'components/UpdateContactForm';
 import { Spinner } from 'components/Spinner';
 import {
   Item,
@@ -11,28 +11,44 @@ import {
   Number,
   ButtonsContainer,
   Button,
+  CallLink,
   CallIcon,
   UpdateIcon,
   DeleteIcon,
 } from './ContactListItem.styled';
 
 export function ContactListItem({ id, name, number }) {
+  const [showModal, setShowModal] = useState(false);
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
-  const [updateContact, { isLoading: isUpdating }] = useUpdateContactMutation();
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
 
   return (
     <Item>
+      {showModal && (
+        <Modal onClose={toggleModal}>
+          <UpdateContactForm id={id} name={name} number={number} />
+        </Modal>
+      )}
+
       <ContactsContainer>
         <Name>{`${name}:`}</Name>
         <Number>{`${number}`}</Number>
       </ContactsContainer>
+
       <ButtonsContainer>
         <Button type="button">
-          <CallIcon />
+          <CallLink href={`tel:${number}`}>
+            <CallIcon />
+          </CallLink>
         </Button>
-        <Button type="button">
+
+        <Button type="button" onClick={toggleModal} aria-label="update contact">
           <UpdateIcon />
         </Button>
+
         <Button
           type="button"
           onClick={() => deleteContact(id)}
