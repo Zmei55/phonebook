@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 import { useCreateNewContactMutation } from 'redux/contacts';
 import {
   Section,
@@ -24,6 +25,7 @@ export function ContactForm({ onClose }) {
 
     try {
       await createContact(formState);
+      toast.success('Kontakt erstellt!');
     } catch (error) {
       console.log('ERROR');
     }

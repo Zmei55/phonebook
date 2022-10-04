@@ -20,7 +20,7 @@ export function ContactSection({ filterValue, handleFilter }) {
         </Modal>
       )}
 
-      <ContactFilter />
+      <ContactFilter filterValue={filterValue} handleFilter={handleFilter} />
 
       <AddContactBtn onClick={toggleModal} aria-label="add contact">
         <AddContactIcon />

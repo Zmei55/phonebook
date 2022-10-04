@@ -5,7 +5,7 @@ import { ContactList } from 'components/ContactList';
 
 export function ContactsPage() {
   const [filterValue, setFilterValue] = useState('');
-  const { data: contacts, isFetching } = useGetAllContactsQuery();
+  const { data: contacts } = useGetAllContactsQuery();
 
   const filteredContacts = contacts?.filter(contact =>
     contact.name.toLowerCase().includes(filterValue)

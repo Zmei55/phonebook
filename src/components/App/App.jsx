@@ -4,15 +4,9 @@ import { PrivateRoute } from 'components/PrivateRoute';
 import { Container } from 'components/Container';
 import { Layout } from 'components/Layout';
 import { HomePage, ContactsPage, LoginPage, RegisterPage } from 'pages';
-// import { useSelector } from 'react-redux';
-// import { useGetCurrentUserQuery } from 'redux/auth';
+import { Toaster } from 'react-hot-toast';
 
 export function App() {
-  // const token = useSelector(state => state.auth.token);
-  // const isFetchingCurrentUser = useSelector();
-
-  // useGetCurrentUserQuery(null, { skip: !token });
-
   return (
     <Container>
       <Routes>
@@ -51,6 +45,7 @@ export function App() {
           />
         </Route>
       </Routes>
+      <Toaster position="top-right" />
     </Container>
   );
 }
