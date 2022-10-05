@@ -1,9 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { useLogOutMutation } from 'redux/auth';
+import { useLogOutMutation, authSelectors } from 'redux/auth';
 import defaultAvatar from './default-avatar.png';
 import { logoutSuccess } from 'redux/auth';
-// import { MdLogout } from 'react-icons/md';
 import {
   Container,
   IMG,
@@ -16,7 +15,7 @@ export function UserMenu() {
   const dispatch = useDispatch();
   const [logout] = useLogOutMutation();
 
-  const name = useSelector(state => state.auth.user.name);
+  const name = useSelector(authSelectors.getUserName);
   const avatar = defaultAvatar;
 
   const handleLogOutClick = () => {
