@@ -3,7 +3,7 @@ import { useGetAllContactsQuery } from 'redux/contacts';
 import { ContactSection } from 'components/ContactSection';
 import { ContactList } from 'components/ContactList';
 
-export function ContactsPage() {
+export default function ContactsPage() {
   const [filterValue, setFilterValue] = useState('');
   const { data: contacts, error, isFetching } = useGetAllContactsQuery();
 

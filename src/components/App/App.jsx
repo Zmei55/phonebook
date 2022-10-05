@@ -1,16 +1,27 @@
 import { Routes, Route } from 'react-router-dom';
+import loadable from '@loadable/component';
 import { PublicRoute } from 'components/PublicRoute';
 import { PrivateRoute } from 'components/PrivateRoute';
 import { Container } from 'components/Container';
 import { Layout } from 'components/Layout';
-import {
-  HomePage,
-  ContactsPage,
-  LoginPage,
-  RegisterPage,
-  NotFoundView,
-} from 'pages';
+import { Spinner } from 'components/Spinner';
 import { Toaster } from 'react-hot-toast';
+
+const HomePage = loadable(() => import('pages/HomePage'), {
+  fallback: <Spinner />,
+});
+const ContactsPage = loadable(() => import('pages/ContactsPage'), {
+  fallback: <Spinner />,
+});
+const LoginPage = loadable(() => import('pages/LoginPage'), {
+  fallback: <Spinner />,
+});
+const RegisterPage = loadable(() => import('pages/RegisterPage'), {
+  fallback: <Spinner />,
+});
+const NotFoundPage = loadable(() => import('pages/NotFoundPage'), {
+  fallback: <Spinner />,
+});
 
 export function App() {
   return (
@@ -53,7 +64,7 @@ export function App() {
             path="*"
             element={
               <PublicRoute>
-                <NotFoundView />
+                <NotFoundPage />
               </PublicRoute>
             }
           />
