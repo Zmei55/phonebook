@@ -2,7 +2,7 @@ import { ContactListItem } from 'components/ContactListItem';
 import { Spinner } from 'components/Spinner';
 import { Section, List } from './ContactList.styled';
 
-export function ContactList({ contacts, error, isFetching }) {
+export function ContactList({ contacts, isFetching }) {
   return (
     <Section>
       {isFetching ? (
@@ -11,7 +11,7 @@ export function ContactList({ contacts, error, isFetching }) {
         <List>
           {contacts ? (
             contacts.map(contact => (
-              <ContactListItem key={contact.id} {...contact} error={error} />
+              <ContactListItem key={contact.id} {...contact} />
             ))
           ) : (
             <h2>
