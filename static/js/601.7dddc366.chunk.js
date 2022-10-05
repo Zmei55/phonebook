@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkphonebook=self.webpackChunkphonebook||[]).push([[601],{1601:function(n,e,t){t.r(e),t.d(e,{default:function(){return f}});var i,c,o=t(168),r=t(4709),s=r.Z.section(i||(i=(0,o.Z)(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  height: 300px;\n"]))),u=r.Z.h1(c||(c=(0,o.Z)(["\n  font-size: 32px;\n"]))),h=t(3329);function l(){return(0,h.jsx)(s,{children:(0,h.jsx)(u,{children:"Herzlich willkommen im besten Telefonbuch!!!"})})}function f(){return(0,h.jsx)(l,{})}}}]);
+//# sourceMappingURL=601.7dddc366.chunk.js.map
