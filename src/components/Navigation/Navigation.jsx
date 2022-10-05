@@ -7,9 +7,7 @@ export function Navigation() {
 
   return (
     <nav>
-      <Navlink to="/" end>
-        Home
-      </Navlink>
+      <Navlink to="/">Home</Navlink>
       {isLoggedIn && <Navlink to="/contacts">Contacts List</Navlink>}
     </nav>
   );

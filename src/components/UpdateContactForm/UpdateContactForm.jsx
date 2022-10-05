@@ -10,7 +10,7 @@ import {
 } from './UpdateContactForm.styled';
 
 export function UpdateContactForm({ id, name, number, onClose }) {
-  const [updateContact, { isLoading: isUpdating }] = useUpdateContactMutation();
+  const [updateContact] = useUpdateContactMutation();
   const [formState, setFormState] = useState({
     id,
     name,
