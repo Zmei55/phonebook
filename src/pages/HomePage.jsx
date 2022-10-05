@@ -1,5 +1,5 @@
-import { HomeHiro } from 'components/HomeHiro';
+import { HomeHero } from 'components/HomeHero';
 
 export function HomePage() {
-  return <HomeHiro />;
+  return <HomeHero />;
 }

@@ -3,7 +3,13 @@ import { PublicRoute } from 'components/PublicRoute';
 import { PrivateRoute } from 'components/PrivateRoute';
 import { Container } from 'components/Container';
 import { Layout } from 'components/Layout';
-import { HomePage, ContactsPage, LoginPage, RegisterPage } from 'pages';
+import {
+  HomePage,
+  ContactsPage,
+  LoginPage,
+  RegisterPage,
+  NotFoundView,
+} from 'pages';
 import { Toaster } from 'react-hot-toast';
 
 export function App() {
@@ -41,6 +47,14 @@ export function App() {
               <PrivateRoute redirectTo="/login">
                 <ContactsPage />
               </PrivateRoute>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <PublicRoute>
+                <NotFoundView />
+              </PublicRoute>
             }
           />
         </Route>

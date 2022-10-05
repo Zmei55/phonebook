@@ -23,6 +23,8 @@ export const Item = styled.li`
 export const ContactsContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  width: 250px;
 `;
 
 export const Name = styled.div`
